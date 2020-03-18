@@ -24,6 +24,15 @@ packages:
             insert:
                 function: baas/insert.js
                 web-export: false
+            select:
+                function: baas/select.js
+                web-export: false
+            update:
+                function: baas/update.js
+                web-export: false
+            delete:
+                function: baas/delete.js
+                web-export: false
             backup:
                 function: backup/handler.js
                 web-export: false
