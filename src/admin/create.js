@@ -1,13 +1,13 @@
 const { Client } = require('pg')
-const cert = `<ADD THE IBM CLOUD DATABASES FOR POSTGRESQL CERTIFICATE>`
+const cert = `{cert}`
 
 async function main(params) {
     const client = new Client({
-        host: "<HOSTNAME>",
-        port: "<PORT>",
-        user: "<USERNAME>",
-        password: "<PASSWORD>",
-        database: "<DATABASE>",
+        host: '{host}',
+        port: '{port}',
+        user: '{user}',
+        password: '{password}',
+        database: '{database}',
         ssl: {
             ca: cert
         }
@@ -21,8 +21,8 @@ async function main(params) {
             created_at TIMESTAMP NOT NULL,
             updated_at TIMESTAMP NOT NULL,
             completed BOOL NOT NULL);`)
-            client.end()
-            return res
+        client.end()
+        return res
     }
     catch (err) {
         console.error('PostgreSQL error', err)
